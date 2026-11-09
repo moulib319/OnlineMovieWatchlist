@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Movies - Movie Watchlist</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="brand" href="/admin-dashboard.html">Movie Watchlist Admin</a>
+        <div class="nav-links">
+            <span class="nav-user">Signed in as <strong class="js-user-name">Admin</strong></span>
+            <a href="#" onclick="logout(); return false;">Logout</a>
+        </div>
+    </nav>
+
+    <div class="admin-layout">
+        <aside class="sidebar">
+            <h3>Admin Menu</h3>
+            <a href="/admin-dashboard.html">Dashboard</a>
+            <a href="/add-movie.html">Add Movie</a>
+            <a class="active" href="/manage-movies.html">Manage Movies</a>
+            <div class="sidebar-logout">
+                <a href="#" onclick="logout(); return false;">Logout</a>
+            </div>
+        </aside>
+
+        <main class="content">
+            <div class="page-head">
+                <div>
+                    <h1>Manage Movies</h1>
+                    <p>Search, edit or delete movies in the catalogue.</p>
+                </div>
+                <a class="btn btn-small" href="/add-movie.html">+ Add Movie</a>
+            </div>
+
+            <div id="pageAlert" class="alert"></div>
+
+            <div class="search-bar">
+                <input type="search" id="searchInput" placeholder="Search movies by title...">
+                <button class="btn" id="searchBtn" type="button">Search</button>
+                <button class="btn btn-secondary" id="clearBtn" type="button">Clear</button>
+            </div>
+
+            <div class="table-wrap">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Poster</th>
+                            <th>Title</th>
+                            <th>Genre</th>
+                            <th>Release Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="moviesTableBody">
+                        <tr><td colspan="5" class="empty">Loading movies...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Edit movie modal -->
+    <div class="modal-overlay" id="editModal">
+        <div class="modal">
+            <div class="modal-head">
+                <h3>Edit Movie</h3>
+                <button type="button" class="modal-close" id="modalClose">&times;</button>
+            </div>
+
+            <div id="modalAlert" class="alert"></div>
+
+            <form id="editMovieForm" novalidate>
+                <input type="hidden" id="editId">
+                <div class="form-group">
+                    <label for="editTitle">Title</label>
+                    <input type="text" id="editTitle" required>
+                </div>
+                <div class="form-group">
+                    <label for="editGenre">Genre</label>
+                    <input type="text" id="editGenre" required>
+                </div>
+                <div class="form-group">
+                    <label for="editReleaseDate">Release Date</label>
+                    <input type="date" id="editReleaseDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="editDescription">Description</label>
+                    <textarea id="editDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="editPoster">Replace Poster</label>
+                    <input type="file" id="editPoster" accept="image/*">
+                    <p class="form-note">Leave empty to keep the current poster.</p>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn" id="updateBtn">Update Movie</button>
+                    <button type="button" class="btn btn-secondary" id="cancelEdit">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/common.js"></script>
+    <script src="/js/manage-movies.js"></script>
+</body>
+</html>

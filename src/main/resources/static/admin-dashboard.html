@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Movie Watchlist</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="brand" href="/admin-dashboard.html">Movie Watchlist Admin</a>
+        <div class="nav-links">
+            <span class="nav-user">Signed in as <strong class="js-user-name">Admin</strong></span>
+            <a href="#" onclick="logout(); return false;">Logout</a>
+        </div>
+    </nav>
+
+    <div class="admin-layout">
+        <aside class="sidebar">
+            <h3>Admin Menu</h3>
+            <a class="active" href="/admin-dashboard.html">Dashboard</a>
+            <a href="/add-movie.html">Add Movie</a>
+            <a href="/manage-movies.html">Manage Movies</a>
+            <div class="sidebar-logout">
+                <a href="#" onclick="logout(); return false;">Logout</a>
+            </div>
+        </aside>
+
+        <main class="content">
+            <div class="page-head">
+                <div>
+                    <h1>Dashboard</h1>
+                    <p>Overview of movies and registered users.</p>
+                </div>
+            </div>
+
+            <div id="pageAlert" class="alert"></div>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="movieCount">0</div>
+                    <div class="stat-label">Total Movies</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="userCount">0</div>
+                    <div class="stat-label">Registered Accounts</div>
+                </div>
+            </div>
+
+            <section class="panel">
+                <div class="page-head">
+                    <div>
+                        <h2>Registered Users</h2>
+                        <p>Accounts that have registered in the system.</p>
+                    </div>
+                    <a class="btn btn-small" href="/manage-movies.html">Manage Movies</a>
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usersTableBody">
+                            <tr><td colspan="4" class="empty">Loading users...</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/js/common.js"></script>
+    <script src="/js/admin-dashboard.js"></script>
+</body>
+</html>

@@ -1,0 +1,155 @@
+# Project Title: Movie Watchlist Management System
+
+Develop a simple and fully functional web application for my B.Tech CSE academic project.
+
+## 1. Technologies
+
+- Backend: Java with Spring Boot
+- Frontend: HTML, CSS and JavaScript
+- Database: MySQL
+- Database connectivity: Spring Data JPA
+- IDE: VS Code
+
+Do not use React, Angular or other frontend frameworks.
+
+## 2. Project Description
+
+The Movie Watchlist Management System allows users to browse movies and maintain their personal watchlists. An administrator can add new movies and manage existing movie information.
+
+## 3. Administrator Module
+
+Create a separate administrator login and dashboard.
+
+Admin features:
+1. Login with admin credentials.
+2. View all movies.
+3. Add new movies with title, genre, description and release date.
+4. Upload movie poster images.
+5. Edit movie details.
+6. Delete movies.
+7. Search movies by title.
+8. View registered users.
+9. Logout.
+
+## 4. User Module
+
+Create a separate user registration, login and dashboard.
+
+User features:
+1. Register with name, email and password.
+2. Login.
+3. View available movies.
+4. Search movies by title.
+5. Filter movies by genre.
+6. View movie details.
+7. Add movies to personal watchlist.
+8. Remove movies from watchlist.
+9. Mark movies as Watched or Not Watched.
+10. View personal watchlist.
+11. Logout.
+
+## 5. Database
+
+Create a MySQL database named `movie_watchlist_db`.
+
+Create three tables:
+
+**Users**
+- user_id
+- name
+- email
+- password
+- role
+
+**Movies**
+- movie_id
+- title
+- genre
+- description
+- release_date
+- poster_path
+
+**Watchlist**
+- watchlist_id
+- user_id
+- movie_id
+- watch_status
+
+Each user must have a separate watchlist. Store all information permanently in MySQL.
+
+Prevent duplicate movies in the same user's watchlist.
+
+## 6. Graphical Interface
+
+Use only HTML, CSS and basic JavaScript.
+
+Admin pages:
+- admin-login.html
+- admin-dashboard.html
+- add-movie.html
+- manage-movies.html
+
+User pages:
+- register.html
+- user-login.html
+- user-dashboard.html
+- my-watchlist.html
+
+Design requirements:
+- Simple navigation bar.
+- Sidebar for administrator dashboard.
+- Movie cards with poster, title and genre.
+- Simple forms and tables.
+- Search bar and filter dropdown.
+- Different colours for Watched and Not Watched.
+- Basic hover effects.
+- Responsive layout.
+
+Make the design neat and attractive but keep it at a student project level. Avoid unnecessary animations and complex designs.
+
+## 7. Backend Structure
+
+Use simple Java classes:
+
+- User.java
+- Movie.java
+- Watchlist.java
+- UserRepository.java
+- MovieRepository.java
+- WatchlistRepository.java
+- AuthController.java
+- AdminController.java
+- MovieController.java
+- WatchlistController.java
+
+Use Spring Boot to connect HTML pages with Java backend operations.
+
+## 8. Important Requirements
+
+- Admin and user interfaces must be separate.
+- Only admin can add, edit and delete movies.
+- Users can manage only their own watchlists.
+- Passwords must be stored securely using BCrypt.
+- All data must be stored in MySQL.
+- All buttons and forms must work.
+- Validate user inputs.
+- Display appropriate success and error messages.
+- Do not use dummy data as the final implementation.
+- Do not leave incomplete pages or non-working buttons.
+
+## 9. Development Instructions
+
+Develop the application step by step.
+
+1. Create the Spring Boot project.
+2. Configure MySQL.
+3. Create database tables and Java entity classes.
+4. Implement login and registration.
+5. Implement administrator functions.
+6. Implement user functions.
+7. Create HTML pages.
+8. Apply CSS styling.
+9. Connect frontend pages with Java backend.
+10. Test all features and fix errors.
+
+Finally, provide simple instructions to run the project in VS Code and open it in Google Chrome.

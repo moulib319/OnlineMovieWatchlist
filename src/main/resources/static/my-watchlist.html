@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Watchlist - Movie Watchlist</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="brand" href="/user-dashboard.html">Movie Watchlist</a>
+        <div class="nav-links">
+            <a href="/user-dashboard.html">Browse Movies</a>
+            <a class="active" href="/my-watchlist.html">My Watchlist</a>
+            <span class="nav-user">Hi, <strong class="js-user-name">User</strong></span>
+            <a href="#" onclick="logout(); return false;">Logout</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="page-head">
+            <div>
+                <h1>My Watchlist</h1>
+                <p>Your saved movies. Mark them as watched or remove them anytime.</p>
+            </div>
+            <a class="btn btn-secondary btn-small" href="/user-dashboard.html">Browse More Movies</a>
+        </div>
+
+        <div id="pageAlert" class="alert"></div>
+
+        <div class="search-bar">
+            <select id="statusFilter">
+                <option value="All">All Statuses</option>
+                <option value="Watched">Watched</option>
+                <option value="Not Watched">Not Watched</option>
+            </select>
+            <input type="search" id="searchInput" placeholder="Search in my watchlist...">
+        </div>
+
+        <div id="watchlistGrid" class="movie-grid">
+            <p class="empty">Loading your watchlist...</p>
+        </div>
+    </main>
+
+    <script src="/js/common.js"></script>
+    <script src="/js/my-watchlist.js"></script>
+</body>
+</html>

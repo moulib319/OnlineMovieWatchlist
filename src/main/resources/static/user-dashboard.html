@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard - Movie Watchlist</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="brand" href="/user-dashboard.html">Movie Watchlist</a>
+        <div class="nav-links">
+            <a class="active" href="/user-dashboard.html">Browse Movies</a>
+            <a href="/my-watchlist.html">My Watchlist</a>
+            <span class="nav-user">Hi, <strong class="js-user-name">User</strong></span>
+            <a href="#" onclick="logout(); return false;">Logout</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <div class="page-head">
+            <div>
+                <h1>Browse Movies</h1>
+                <p>Search the catalogue and add movies to your personal watchlist.</p>
+            </div>
+            <a class="btn btn-secondary btn-small" href="/my-watchlist.html">Go to My Watchlist</a>
+        </div>
+
+        <div id="pageAlert" class="alert"></div>
+
+        <div class="search-bar">
+            <input type="search" id="searchInput" placeholder="Search movies by title...">
+            <select id="genreFilter">
+                <option value="All">All Genres</option>
+            </select>
+            <button class="btn" id="searchBtn" type="button">Search</button>
+            <button class="btn btn-secondary" id="clearBtn" type="button">Clear</button>
+        </div>
+
+        <div id="movieGrid" class="movie-grid">
+            <p class="empty">Loading movies...</p>
+        </div>
+    </main>
+
+    <!-- Movie details modal -->
+    <div class="modal-overlay" id="detailsModal">
+        <div class="modal">
+            <div class="modal-head">
+                <h3>Movie Details</h3>
+                <button type="button" class="modal-close" id="detailsClose">&times;</button>
+            </div>
+            <div id="detailsAlert" class="alert"></div>
+            <div class="detail-layout">
+                <img id="detailPoster" class="poster" src="/images/no-poster.svg" alt="Movie poster">
+                <div class="detail-info">
+                    <h4 id="detailTitle">Title</h4>
+                    <div class="meta">
+                        <span id="detailGenre">Genre</span> &middot;
+                        <span id="detailDate">Release date</span>
+                    </div>
+                    <p class="description" id="detailDescription">Description</p>
+                    <div class="form-actions">
+                        <button class="btn btn-success" id="detailAddBtn" type="button">Add to Watchlist</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/common.js"></script>
+    <script src="/js/user-dashboard.js"></script>
+</body>
+</html>
